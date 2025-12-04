@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Cafe</title>
+    <title>Café Nómaco | Especialidad</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Primer Tirulo</h1>
+
+    <header class="header">
+        <div class="logo">NÓMACO</div>
+        <nav class="nav">
+            <a href="#">Inicio</a>
+            <a href="#menu">Menú</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>El café que despierta tus sentidos</h1>
+                <p>Granos seleccionados, tostado artesanal y ambiente único.</p>
+                <button class="btn-primary">Ver Carta</button>
+            </div>
+        </section>
+
+        <section id="menu" class="favorites">
+            <h2>Nuestros Favoritos</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-image">☕</div> <h3>Cappuccino</h3>
+                    <p class="price">3.50€</p>
+                </article>
+                
+                <article class="card">
+                    <div class="card-image">🥐</div>
+                    <h3>Croissant</h3>
+                    <p class="price">2.00€</p>
+                </article>
+                
+                <article class="card">
+                    <div class="card-image">🍵</div>
+                    <h3>Matcha Latte</h3>
+                    <p class="price">4.00€</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto" class="footer">
+        <p>© 2025 Café Nómaco. Hecho con ❤️ en España.</p>
+    </footer>
+
 </body>
 </html>

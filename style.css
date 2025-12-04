@@ -1,0 +1,158 @@
+/* 1. CSS Reset (para que se vea igual en todos los navegadores) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* IMPORTANTE: Las paddings no afectan al tamaño total del elemento */
+}
+
+/* 2. Variables (Para una gestión de colores profesional) */
+:root {
+    --color-primary: #6F4E37; /* Marrón Café */
+    --color-secondary: #f5f5f7; /* Gris muy suave/Beige */
+    --color-text-dark: #1a1a1a;
+    --color-text-light: #ffffff;
+    --font-heading: 'Arial', sans-serif; /* fuente elegida */
+}
+
+body {
+    font-family: var(--font-heading);
+    color: var(--color-text-dark);
+}
+/* --- ESTILOS DEL HEADER (Navegación) --- */
+.header {
+    background-color: var(--color-secondary);
+    padding: 20px 40px; /* Espacio arriba/abajo y a los lados */
+    
+    /* El display para organizar  */
+    display: flex; 
+    justify-content: space-between; /* Manda el logo a un lado y el menú al otro */
+    align-items: center; /* Centra verticalmente el texto y los enlaces */
+}
+
+/* --- Hero Seccion (La portada) --- */
+.hero {
+    /* 1. Definir tamaño */
+    min-height: 80vh; /* Ocupa al menos el 80% de la altura de la pantalla */
+    
+    /* 2. Añadir la imagen de fondo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/coffee-hero.jpg'); 
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen */
+    
+    /* 3. Centrar el contenido de texto (usando Flexbox de nuevo) */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--color-text-light); /* Usamos el color blanco de nuestra variable */
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* --- ESTILO DEL BOTÓN --- */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.btn-primary:hover {
+    background-color: #A07F55; /* Un tono más claro de café */
+}
+
+.logo {
+    font-size: 1.8rem; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.nav a {
+    text-decoration: none; /* Quita el subrayado a los enlaces */
+    color: var(--color-text-dark);
+    margin-left: 20px; /* Espacio entre cada enlace */
+    font-size: 1rem;
+}
+
+.nav a:hover {
+    color: var(--color-primary); /* Cambia de color al pasar el ratón */
+}
+/* --- SECCIÓN FAVORITOS (CSS Grid) --- */
+.favorites {
+    padding: 60px 40px; /* Espacio alrededor de toda la sección */
+    text-align: center;
+}
+
+.favorites h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+.grid-container {
+    display: grid;
+    /* Esto es lo que crea 3 columnas IGUALES (1fr) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Espacio entre cada tarjeta */
+}
+
+/* Estilo de cada tarjeta */
+.card {
+    padding: 30px;
+    background-color: var(--color-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+}
+
+.card-image {
+    font-size: 3rem; 
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+/* --- MEDIA QUERIES (RESPONSIVENESS) --- */
+@media (max-width: 768px) {
+    /* Aquí reescribimos las reglas para móviles */
+    
+    .header {
+        padding: 20px 15px;
+    }
+
+    /* En pantallas pequeñas, el Grid debe ser de 1 columna */
+    .grid-container {
+        grid-template-columns: 1fr; /* Una columna que ocupa el 100% */
+        gap: 20px;
+    }
+}/* --- FOOTER --- */
+.footer {
+    background-color: var(--color-text-dark); /* Fondo oscuro */
+    color: var(--color-secondary); /* Letras claras */
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
